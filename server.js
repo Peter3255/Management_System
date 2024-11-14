@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 8080
 app.use(
     session({
     // String should be replaced with an environment variable
-    secret: "secret",
+    secret: "",
 
     resave: false,
 
