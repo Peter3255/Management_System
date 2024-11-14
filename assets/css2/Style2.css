@@ -1,0 +1,109 @@
+.lightseagreen {
+    color: lightseagreen;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.imageForStore {
+    margin-left: 30px;
+    
+}
+
+.imageForStore2 {
+    margin-left: 90px;
+    
+}
+
+.imageForStore3 {
+    margin-left: 100px;
+}
+
+.imageForStore4 {
+    margin-left: 170px;
+}
+
+.imageForStore5 {
+    margin-left: 90px;
+}
+
+.imageForStore6 {
+    margin-left: 170px;
+}
+
+.title1 {
+    margin-left: 70px;
+}
+
+.title2 {
+    margin-left: 180px;
+}
+
+.title3 {
+    margin-left: 60px;
+    /*margin-right: 1000px;*/
+}
+
+.title4 {
+    margin-right: 850px;
+    margin-left: 150px;
+}
+
+.title5 {
+    margin-left: 85px;
+}
+
+.title6 {
+    margin-left: 170px;
+}
+
+.currency1 {
+    margin-left: 120px;
+    line-height: 0.1;
+}
+
+.currency2 {
+    margin-left: 260px;
+    line-height: 0.1;
+}
+
+.text1 {
+    margin-left: 80px;
+    margin-right: 140px;
+}
+
+.text2 {
+    margin-right: 780px;
+    
+}
+
+.text3 {
+    margin-left: 55px;
+    margin-right: 150px;
+}
+
+.text4 {
+    margin-right: 840px;
+    
+}
+
+.text5 {
+    margin-left: 55px;
+    margin-right: 150px;
+}
+
+.text6 {
+    margin-right: 840px;
+    
+}
+
+.container {
+    display: flex;
+    
+}
+
+.footerCenter {
+    text-align: center;
+}

@@ -1,0 +1,106 @@
+<form action="/api/users" method='POST' id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Mark">
+        </div>
+
+        <div class="form-group">
+            <label for="Email" class="text-light">Email</label>
+            <input type="text" name="email" value="" placeholder="example@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="LastName" class="text-light">Last Name</label>
+            <input type="text" name="lastName" value="" placeholder="Stoenis">
+        </div>
+
+        <div class="form-group">
+            <label for="StreetAddress" class="text-light">Street Address</label>
+            <input type="text" name="streetAddress" value="" placeholder="123 Main Street">
+        </div>
+
+        <div class="form-group">
+            <label for="City" class="text-light">City</label>
+            <input type="text" name="city" value="" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="State" class="text-light">State</label>
+            <input type="text" name="state" value="" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="ZipCode" class="text-light">Zip Code</label>
+            <input type="text" name="zipCode" value="" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="CountryOrRegion" class="text-light">Country/Region</label>
+            <input type="text" name="countryOrRegion" value="" placeholder="">
+        </div>
+
+        <br>
+        <br>
+
+        <h2>Credit/Debit Card</h2>
+
+        <br>
+
+        <div class="form-group">
+            <label for="CardNumber" class="text-light">Card Number</label>
+            <input type="text" name="cardNumber" value="" placeholder="Card Number">
+        </div>
+
+        <div class="form-group">
+            <label for="CVV2Number" class="text-light">CVV2 Number</label>
+            <input type="text" name="cVV2Number" value="" placeholder="***">
+        </div>
+
+        <div class="form-group">
+            <label for="Month" class="text-light">Month</label>
+            <input type="text" name="month" value="" placeholder="11">
+        </div>
+
+        <div class="form-group">
+            <label for="Year" class="text-light">Year</label>
+            <input type="text" name="year" value="" placeholder="2024">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="gender" class="text-light">Gender</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="gender" value="Male" >
+                <label for="radio-2" class="radio-label">Male</label>
+            </div>
+
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="gender" value="Female" >
+                <label for="radio-3" class="radio-label">Female</label>
+            </div>
+            
+        </div>
+
+        <div class="form-group"></div>
+            <label for="gender" class="text-light">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="status" value="Active" >
+                <label for="radio-4" class="radio-label">Active</label>
+            </div>
+
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" >
+                <label for="radio-5" class="radio-label">Inactive</label>
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+        <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+ </form>
