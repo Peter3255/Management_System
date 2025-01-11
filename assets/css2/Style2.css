@@ -1,10 +1,17 @@
-.lightseagreen {
-    color: lightseagreen;
+/*body {
+    padding-bottom: 4px;
+    background-image: url("assets/img/6DaLb9y.jpeg");
+    background-size: contain;
+}*/
+
+.yellow {
+    color: yellow;
     text-align: center;
 }
 
 .center {
     text-align: center;
+    
 }
 
 .imageForStore {
@@ -72,31 +79,34 @@
 .text1 {
     margin-left: 80px;
     margin-right: 140px;
+    color: white;
 }
 
 .text2 {
     margin-right: 780px;
-    
+    color: white;
 }
 
 .text3 {
     margin-left: 55px;
     margin-right: 150px;
+    color: white;
 }
 
 .text4 {
     margin-right: 840px;
-    
+    color: white;
 }
 
 .text5 {
     margin-left: 55px;
     margin-right: 150px;
+    color: white;
 }
 
 .text6 {
     margin-right: 840px;
-    
+    color: white;
 }
 
 .container {
@@ -106,4 +116,18 @@
 
 .footerCenter {
     text-align: center;
+}
+
+
+
+
+
+
+
+/*Login Page*/
+
+.center2 {
+   
+    color:aqua
+    
 }

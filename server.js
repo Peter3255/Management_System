@@ -15,6 +15,7 @@ const initializePassport = require("./passportConfig");
 initializePassport(passport);
 
 const connectDB = require('./server/database/connection');
+const Userdb = require('./server/model/model');
 
 const app = express();
 
@@ -104,9 +105,16 @@ app.get("/users/login", checkAuthenticated, (req, res) => {
     res.render("login");
 });
 
-app.get("/users/index", checkNotAuthenticated, (req, res) => {
-    res.render("index", { user: req.user.name });
+/*app.get("/users/index", checkNotAuthenticated, (req, res) => {
+    res.render("index", { user: req.user.email });
+});*/
+
+app.get("/users/index", (req, res) => {
+    res.render("index", { user: req.user.email, users:Userdb.find( {} ) });
 });
+
+
+
 
 app.get("/users/logout", (req, res) => {
     req.logOut(function(err) {
