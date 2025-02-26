@@ -1,4 +1,4 @@
-const express = require('express');
+
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
@@ -10,6 +10,71 @@ const session = require("express-session");
 const flash = require("express-flash");
 const passport = require("passport");
 
+const express = require('express');
+const app = express();
+
+
+
+
+
+// Added
+
+// jwt
+const jwt = require('jsonwebtoken');
+
+
+
+
+const customers = [
+    {
+    "username": 'john',
+    "password": 'password123admin',
+    "number": 170
+}, {
+    "username": 'anna',
+    "password": 'password123member',
+    "number": 450
+}
+];
+
+
+app.get('/', (req, res) => {
+    res.send("Login Auth")
+})
+
+// secret key
+const accessTokenSecret = ''
+
+const authenticateJWT = (req, res, next) => {
+    const authheader = req.headers.authorization;
+
+    if (authheader){
+        const token = authheader.split('')[1];
+        jwt.verify(token, accessTokenSecret, (err, user) => {
+            if(err){
+                return res.sendStatus(403)
+            }
+            req.user = user
+            next()
+        })
+    } else{
+        res.sendStatus(401);
+    }
+} 
+
+app.get('/customers', authenticateJWT, (req, res) => {
+    res.json(customers)
+})
+
+
+
+
+
+
+
+
+
+
 const initializePassport = require("./passportConfig");
 
 initializePassport(passport);
@@ -17,11 +82,12 @@ initializePassport(passport);
 const connectDB = require('./server/database/connection');
 const Userdb = require('./server/model/model');
 
-const app = express();
+
+
 
 dotenv.config( { path : 'config.env' } )
 const PORT = process.env.PORT || 8080
-
+const PORT2 = 4000;
 
 app.use(
     session({
@@ -68,8 +134,13 @@ app.use('/', require('./server/routes/router'))
 
 
 
+
+
+
+
+
 app.post("/users/login", passport.authenticate("local", {
-    successRedirect: "/users/index",
+    successRedirect: "/dashboard",
     failureRedirect: "/users/login",
     failureFlash: true
 })
@@ -89,7 +160,8 @@ function checkNotAuthenticated(req, res, next) {
     res.redirect("/users/login");
 }
 
-app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
+// Changed
+app.listen(PORT2, ()=> { console.log(`Server is running on http://localhost:${PORT2}`)});
 
 
 app.get("/", (req, res) => {
@@ -175,10 +247,11 @@ if (errors.length > 0) {
                     `INSERT INTO users (name, email, password)
                     VALUES ($1, $2, $3)
                     RETURNING id, password`, 
-                    [name, email, hashedPassword], 
+                    [name, email, hashedPassword],
                     (err, results)=> {
                         if (err) {
                             throw err;
+                            
                         }
                         console.log(results.rows);
                         req.flash("success_msg", "You are now registered. Please log in");
@@ -191,3 +264,5 @@ if (errors.length > 0) {
     
 }
 });
+
+

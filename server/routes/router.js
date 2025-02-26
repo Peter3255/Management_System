@@ -1,8 +1,16 @@
 const express = require('express');
-const route = express.Router()
+const route = express.Router();
+
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+
+/**
+ * @description Show index.ejs
+ * @method GET /
+ */
+
+route.get('/dashboard',services.index);
 
 /**
  * @description Root Route

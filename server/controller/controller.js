@@ -13,7 +13,7 @@ exports.create = (req,res)=>{
 const user = new Userdb({
     name: req.body.name,
     email: req.body.email,
-    lastName: req.body.lastName,
+    /*lastName: req.body.lastName,
     streetAddress: req.body.streetAddress,
     city: req.body.city,
     state: req.body.state,
@@ -23,6 +23,7 @@ const user = new Userdb({
     cVV2Number: req.body.cVV2Number,
     month: req.body.month,
     year: req.body.year,
+    */
     gender: req.body.gender,
     status: req.body.status
 })
