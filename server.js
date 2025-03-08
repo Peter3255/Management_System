@@ -49,7 +49,7 @@ const authenticateJWT = (req, res, next) => {
     const authheader = req.headers.authorization;
 
     if (authheader){
-        const token = authheader.split('')[1];
+        const token = authheader.split(" ")[1];
         jwt.verify(token, accessTokenSecret, (err, user) => {
             if(err){
                 return res.sendStatus(403)
