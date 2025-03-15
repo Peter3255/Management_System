@@ -6,7 +6,11 @@ import './app.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router'
 
-import Login from './components/pages/Login';
+import Login from "./components/imports/pages/Login";
+
+import Register from "./components/imports/pages/Register";
+
+import Home from "./components/imports/pages/Home";
 
 function App() {
 return (
@@ -17,7 +21,9 @@ return (
       
         <BrowserRouter>
         <Routes>
+          <Route exact path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
         </Routes>
         </BrowserRouter>
     
