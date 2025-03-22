@@ -1,15 +1,15 @@
+const express = require('express');
 
-const express = require('express')
+require('dotenv').config({ path: "./config.env" });
+const PORT = process.env.PORT || 8080;
 
 // create express instance
 const app = express();
 app.use(express.json());
 
+// routes
+app.use('/api', require('./router/router'));
 
-app.get('/', (req, res)=>{
-    res.send("Server Request")
-})
-
-app.listen(4000, ()=> {
+app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:4000`);
 })
