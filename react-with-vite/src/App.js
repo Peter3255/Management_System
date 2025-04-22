@@ -7,13 +7,14 @@ import axios from "axios";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Login from "./components/imports/pages/Login";
+import Login from "./components/pages/Login";
 
-import Register from "./components/imports/pages/Register";
+import Register from "./components/pages/Register";
 
-import Home from "./components/imports/pages/Home";
+import Home from "./components/pages/Home";
 
 function App() {
+  
   const [count, setCount] = useState(0);
       const [array, setArray] = useState([]);
 
@@ -29,7 +30,7 @@ function App() {
 
   useEffect(() => {
     fetchAPI();
-  }, []);
+  }, []); 
 
 return (
   <div id="login">
