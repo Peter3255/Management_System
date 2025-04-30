@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { registerAction } from "../../container/actions";
 import RegisterForm from '../imports/RegisterForm';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function Register() {
 const [username, setUsername] = useState("");
 const [email, setEmail] = useState("");
@@ -10,6 +12,7 @@ const [password, setPassword] = useState("");
 const [passwordCheck, setPasswordCheck] = useState("");
 
 const dispatch = useDispatch()
+const navigate = useNavigate()
 
 // on form submit click handler
 const handleSubmit = (event) => {
@@ -24,10 +27,11 @@ const handleSubmit = (event) => {
     
     const user = { username : "admin", email: "admin@gmail.com",
                   password: "admin123", passwordCheck: "admin123"}
-    const validate = dispatch(registerAction(user));
+    const validate = dispatch(registerAction(newUser));
     validate
       .then(data => {
-        console.log(data)
+        // console.log(data)
+        navigate('/login');
       })
       .catch(error => console.log(error))
     // console.log(newUser);

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import ErrorAlert from './ErrorAlert';
 
 export default function LoginForm(props) {
 
-    let { handleSubmit, setEmail, setPassword } = props.loginState;
+    let { handleSubmit, setEmail, setPassword, errorMessage, setError } = props.loginState;
 
     return (
         
@@ -21,6 +22,10 @@ export default function LoginForm(props) {
       <div className="form-group form-box">
       <input type="text" id="password" onChange={e => setPassword(e.target.value)} className="input-text" placeholder="Password" />
       </div>
+
+      {
+        errorMessage && <ErrorAlert errorMessage={errorMessage} clearError={() => setError(undefined)}></ErrorAlert>
+      }
 
       <div className="form-group">
       <button >Login</button>

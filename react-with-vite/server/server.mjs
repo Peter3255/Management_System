@@ -22,10 +22,12 @@ const app = express();
 app.use(express.json());
 
 
-const corsOptions = {
-    origin: ["http://localhost:5173/"],   // <-- Might have to change that later
-}
-app.use(cors(corsOptions));
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Your frontend's origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    
+  }));
 
 
 

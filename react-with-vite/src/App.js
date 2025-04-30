@@ -15,22 +15,7 @@ import Home from "./components/pages/Home";
 
 function App() {
   
-  const [count, setCount] = useState(0);
-      const [array, setArray] = useState([]);
-
-  const fetchAPI = async () => {
-    try {
-      const response = await axios.get("http://localhost:4000/api");
-      setArray(response.data.fruits)
-      console.log(response.data.fruits);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []); 
+  
 
 return (
   <div id="login">
@@ -41,7 +26,7 @@ return (
       
         <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<Home fruits={array} />} />
+        <Route exact path="/" element={<Home />}></Route>
           
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>

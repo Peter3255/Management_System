@@ -42,3 +42,15 @@ export const registerAction = (payload) => (dispatch) => {
             return Promise.reject(error)
         })
     }
+// logout action
+export const logoutAction = (dispatch) => {
+    const msg = AuthService.logout()
+
+    dispatch({
+        type : actionType.LOGOUT,
+        payload : { msg }
+    })
+
+    return Promise.resolve(msg)
+
+}

@@ -5,15 +5,15 @@ const baseURL = "http://localhost:4000/api";
 
 // register request
 const register = (newUser) => {
-    // POST request on http://localhost:5173/register
+    // POST request on http://localhost:4000/api/register
     return axios.post(`${baseURL}/register`, newUser)
     .then(response => {
-        if (response.data) {
-            return Promise.resolve(response.data)
+        if (response) {
+            return Promise.resolve(response)
         }
     })
     .catch(error => {
-        return Promise.reject(error.response.data)
+        return Promise.reject(error.response)
     })
 }
 
@@ -31,7 +31,14 @@ const login = (userCredential) => {
     })
 }
 
+// logout service
+const logout = () => {
+    localStorage.removeItem('x-access-token')
+    return { msg : "Logout Successfully...!" }
+}
+
 export {
     register,
-    login
+    login,
+    logout
 };
