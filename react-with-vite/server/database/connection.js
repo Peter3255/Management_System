@@ -8,10 +8,11 @@ const connect = async () => {
             
         });
 
-        console.log(`MongoDB connected ${con.connection.host}`);
+        console.log(`MongoDB connected (Feature 1): ${con.connection.host}`);
+        return con;
     }
     catch (err) {
-        console.log(err)
+        console.error(`Error connecting to MongoDB (Feature 1):`, err);
         process.exit(1)
     }
 }
